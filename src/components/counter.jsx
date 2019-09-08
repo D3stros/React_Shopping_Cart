@@ -6,14 +6,15 @@ class Counter extends Component {
   };
 
   // Binding event handler handleIncrement to the current Counter object via constructor .bind(this)
-  constructor() {
-    super();
-    this.handleIncrement = this.handleIncrement.bind(this);
-  }
+  // constructor() {
+  //  super();
+  //  this.handleIncrement = this.handleIncrement.bind(this);
+  // }
 
-  handleIncrement() {
+  // Arrow functions do not rebind the this keyword. They inherit it.
+  handleIncrement = () => {
     console.log("Increment clicked", this);
-  }
+  };
 
   render() {
     return (
