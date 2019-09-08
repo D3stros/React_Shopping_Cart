@@ -5,15 +5,9 @@ class Counter extends Component {
     count: 0
   };
 
-  // Binding event handler handleIncrement to the current Counter object via constructor .bind(this)
-  // constructor() {
-  //  super();
-  //  this.handleIncrement = this.handleIncrement.bind(this);
-  // }
-
-  // Arrow functions do not rebind the this keyword. They inherit it.
-  handleIncrement = () => {
-    console.log("Increment clicked", this);
+  handleIncrement = product => {
+    console.log(product);
+    this.setState({ count: this.state.count + 1 });
   };
 
   render() {
@@ -21,7 +15,7 @@ class Counter extends Component {
       <div>
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
         <button
-          onClick={this.handleIncrement}
+          onClick={() => this.handleIncrement({ id: 1 })}
           className="btn btn-secondary btn-sm"
         >
           Increment
@@ -29,6 +23,7 @@ class Counter extends Component {
       </div>
     );
   }
+
   getBadgeClasses() {
     let classes = "badge m-2 badge-";
     classes += this.state.count === 0 ? "warning" : "primary";
