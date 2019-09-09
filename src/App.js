@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import NavBar from "./components/navbar";
 import Counters from "./components/counters";
 import "./App.css";
-import Counter from "./components/counter";
 
 class App extends Component {
   // Using an array of Counter Objects to our state and render them via map method
